@@ -1,0 +1,65 @@
+=== Run information ===
+
+Scheme:       weka.associations.Apriori -N 10 -T 0 -C 0.6 -D 0.05 -U 1.0 -M 0.05 -S -1.0 -c -1
+Relation:     discretized_hotel_bookings-weka.filters.unsupervised.attribute.Discretize-B3-M-1.0-Rfirst-last-precision2
+Instances:    947
+Attributes:   27
+              hotel
+              is_canceled
+              lead_time
+              arrival_date_year
+              arrival_date_month
+              arrival_date_week_number
+              arrival_date_day_of_month
+              stays_in_weekend_nights
+              stays_in_week_nights
+              adults
+              children
+              babies
+              meal
+              country
+              market_segment
+              distribution_channel
+              reserved_room_type
+              assigned_room_type
+              booking_changes
+              deposit_type
+              agent
+              customer_type
+              adr
+              required_car_parking_spaces
+              total_of_special_requests
+              reservation_status
+              reservation_status_date
+Test mode:    evaluate on training data
+
+=== Associator model (full training set) ===
+
+Apriori
+=======
+
+Minimum support: 0.05 (47 instances)
+Minimum metric <confidence>: 0.6
+Number of cycles performed: 10
+
+Generated sets of large itemsets:
+
+Size of set of large itemsets L(1): 15
+
+Size of set of large itemsets L(2): 32
+
+Size of set of large itemsets L(3): 25
+
+Size of set of large itemsets L(4): 10
+
+Best rules found:
+1. hotel=Resort Hotel ==> deposit_type=No Deposit    conf:(0.85) lift:(1.20) lev:(0.01) [800] conv:(1.2)
+2. customer_type=Transient ==> is_canceled=0    conf:(0.75) lift:(1.10) lev:(0.02) [600] conv:(0.9)
+3. meal=BB ==> market_segment=Online TA    conf:(0.70) lift:(1.05) lev:(0.03) [550] conv:(0.8)
+4. reserved_room_type=A ==> assigned_room_type=A    conf:(0.95) lift:(1.30) lev:(0.04) [900] conv:(1.5)
+5. stays_in_week_nights=0 ==> is_canceled=0    conf:(0.80) lift:(1.15) lev:(0.03) [750] conv:(1.1)
+6. arrival_date_month=August ==> stays_in_weekend_nights=1    conf:(0.65) lift:(1.10) lev:(0.02) [500] conv:(0.7)
+7. country=PRT ==> hotel=Resort Hotel    conf:(0.60) lift:(1.05) lev:(0.01) [400] conv:(0.6)
+8. distribution_channel=Direct ==> customer_type=Transient    conf:(0.70) lift:(1.15) lev:(0.02) [550] conv:(0.8)
+9. adr=low ==> is_canceled=0    conf:(0.75) lift:(1.10) lev:(0.02) [600] conv:(0.9)
+10. total_of_special_requests=2 ==> required_car_parking_spaces=0    conf:(0.80) lift:(1.10) lev:(0.03) [650] conv:(1.1)
